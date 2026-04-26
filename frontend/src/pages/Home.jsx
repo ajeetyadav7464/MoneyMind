@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
 
@@ -33,6 +33,8 @@ const workflowSteps = [
 ];
 
 export default function Home() {
+  const navigate = useNavigate();
+  const categories = []; // Placeholder or derived if needed
   return (
     <Layout>
       <main className="max-w-5xl mx-auto px-6 pt-28 pb-10 space-y-10">
@@ -42,8 +44,8 @@ export default function Home() {
           transition={{ duration: 0.55, ease: 'easeOut' }}
           className="glass-card rounded-[2rem] p-8 md:p-12 border border-outline-variant/10 relative overflow-hidden"
         >
-          <div className="absolute -top-20 -right-12 w-72 h-72 bg-primary/10 rounded-full blur-[100px]" />
-          <div className="absolute -bottom-24 -left-10 w-72 h-72 bg-primary/10 rounded-full blur-[100px]" />
+          <div className="absolute -top-20 -right-12 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute -bottom-24 -left-10 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
           <p className="font-sans uppercase text-[10px] tracking-[0.2em] text-primary mb-3">Welcome Home</p>
           <h2 className="font-serif text-4xl md:text-5xl text-on-surface leading-tight mb-4">
             Fenmo helps you <span className="italic text-primary">track every rupee</span> with clarity.
@@ -56,11 +58,14 @@ export default function Home() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-            className="mt-8 flex flex-wrap gap-3"
+            className="mt-8 flex flex-wrap gap-3 relative z-20"
           >
-            <Link to="/add" className="px-5 py-3 rounded-full bg-primary text-on-primary font-semibold text-sm glow-button">
+            <button 
+              onClick={() => navigate('/add')} 
+              className="px-5 py-3 rounded-full bg-primary text-on-primary font-semibold text-sm glow-button cursor-pointer"
+            >
               Add Expense
-            </Link>
+            </button>
             <Link to="/dashboard" className="px-5 py-3 rounded-full bg-surface-container-high text-on-surface text-sm glow-button">
               Open Dashboard
             </Link>

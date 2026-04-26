@@ -39,7 +39,7 @@ export default function Dashboard() {
         
         {/* Hero Summary Banner */}
         <section className="relative">
-          <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+          <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
           <div className="glass-card glowing-primary rounded-[2.5rem] p-10 flex flex-col md:flex-row justify-between items-start md:items-center relative overflow-hidden">
             <div className="space-y-4 z-10 flex flex-col items-start">
               <span className="font-sans uppercase tracking-[0.2em] text-[10px] font-bold text-on-surface-variant">Total Spend</span>
