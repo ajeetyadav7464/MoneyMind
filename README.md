@@ -1,5 +1,5 @@
-# Fenmo: Full-Stack Expense Tracker
-
+<img width="1912" height="872" alt="image" src="https://github.com/user-attachments/assets/748cf96b-bf27-4098-bbea-5beffe009b7b" /># Fenmo: Full-Stack Expense Tracker
+Live link : https://aymoneymind.vercel.app/
 This repository contains **Fenmo**, a minimal, production-ready full-stack Expense Tracker built to satisfy the personal finance tool assignment requirements.
 
 The system is designed to handle real-world conditions like unreliable networks, browser refreshes, and duplicate submissions, while maintaining exact precision for financial data.
